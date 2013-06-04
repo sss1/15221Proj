@@ -1,5 +1,14 @@
 *.py[cod]
 
+# LaTeX (and Beamer) extensions
+*.aux
+*.log
+*.snm
+*.toc
+*.nav
+*.out
+*.dvi
+
 # C extensions
 *.so
 

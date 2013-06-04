@@ -1,7 +1,4 @@
-%%%%%%%%%%%%%%%%%%%%% COPYRIGHT INFORMATION %%%%%%%%%%%%%%%%%%%%%
-% This text is proprietary.
-% It's a part of presentation made by myself.
-% It may not used commercial.
+%%%%%%%%%%%%%% COPYRIGHT INFORMATION %%%%%%%%%%%%%%
 % Template by
 % Author: Sascha Frank 
 % Nov. 2006
@@ -16,91 +13,56 @@
 
 %%%%%%%%%%%%%%%%%%%%% DOCUMENT %%%%%%%%%%%%%%%%%%%%%
 \begin{document}
-\title{Information Theory and its Applications}
-\author{Shashank Singh}
+\title{Movie-Chain-Runner Problem}
+\author[Singh,Zong]{Shashank Singh \and Jimmy Zong}
 \date{\today} 
 
 \frame{\titlepage}
 
-\frame{\frametitle{Table of contents}\tableofcontents}
+\frame{\frametitle{Outline}\tableofcontents}
 
-\section{Information Processing}
-\frame{\frametitle{Information}
-Two kinds:
-\begin{columns}
-\begin{column}{5cm}
+\section{Team Members}
+\frame{\frametitle{Team Members}
+}
+
+\section{Problem Introduction}
+\frame{\frametitle{The Problem}
+}
+
+\section{Benefits}
+\frame{\frametitle{Benefits}
+}
+
+\section{Approach}
+\frame{\frametitle{Approach}
 \begin{itemize}
-\item<1-> Deterministic
-\item<2-> Probabilistic
-\vspace{5cm}
+\item Algorithms
+\item Project Timeline (Gantt Chart)
 \end{itemize}
-\end{column}
-\begin{column}{7cm}
-\begin{overprint}
-\includegraphics[scale=0.28]<1>{decision_tree}
-\includegraphics[scale=0.4]<2>{regression}
-\end{overprint}
-\end{column}
-\end{columns}
-\begin{minipage}[t][.8\textheight]{\textwidth}
-\tiny
-Sources: https://www.cs.duke.edu/courses/cps100/current/Assignments/20Questions/20QuestionsHowTo.html
-and http://upload.wikimedia.org/wikipedia/commons/3/3a/Linear\_regression.svg
-(both accessed \today)
-\end{minipage}
-\begin{minipage}[t][.8\textheight]{\textwidth}
-\tiny
-Source: http://www.lit.lnt.de/Courses/FA/fa\_2012.shtml (accessed \today)
-\end{minipage}
 }
 
-\section{Useful Tools}
-\frame{\frametitle{Shannon's Information Theory}
-\begin{align*}
-H(X)    & = \int_{\mathcal{X}} p(x) \ln p(x) \, dx
-        & \mbox{(Entropy)}  \\
-D(X\|Y) & = \int_{\mathcal{X}}
-                \int_{\mathcal{Y}} p(x) \ln \frac{p(x)}{p(y)} \, dy \, dx
-        & \mbox{(KL-Divergence)}  \\
-I(X;Y)  & = D(p(x,y)\|p(x)p(y))
-        & \mbox{(Mutual Information)}  \\
-H(X|Y)  & = H(X) - I(X;Y)
-        & \mbox{(Conditional Entropy)}
-\end{align*}
+\subsection{Algorithms}
+\frame{\frametitle{Algorithms}
 }
 
-\frame{\frametitle{Network Information Theory}
-\begin{center}
-\includegraphics[scale=0.3]{network_IT}
-\end{center}
-
-\begin{minipage}[t][.8\textheight]{\textwidth}
-\tiny
-Source: http://www.lit.lnt.de/Courses/FA/fa\_2012.shtml (accessed \today)
-\end{minipage}
+\subsection{Project Timeline}
+\frame{\frametitle{Gantt Chart}
 }
 
-\frame{\frametitle{Artificial Neural Networks}
-\begin{center}
-\includegraphics[scale=0.6]{ann}
-\end{center}
-\vspace{1cm}
-\begin{minipage}[t][.8\textheight]{\textwidth}
-\tiny
-Source: http://hepatmon.com/?page=article\&article\_id=481 (accessed \today)
-\end{minipage}
+\subsection{Qualifications}
+\frame{\frametitle{Qualifications}
 }
 
-\section{Neural Computation}
-\frame{\frametitle{Biological Neural Networks}
-\begin{center}
-\includegraphics[scale=0.16]{DTI}
-\end{center}
+\subsection{Summary}
+\frame{\frametitle{Summary}
+}
 
-\begin{minipage}[t][.8\textheight]{\textwidth}
-\tiny
-Source: http://www.neurology.org/content/70/12/948/F1.large.jpg
-(accessed \today)
-\end{minipage}
+\frame{\frametitle{Sources}
+\begin{itemize}
+\item Gantt Chart created using software from the Gantt Project
+\begin{itemize}
+\item http://www.ganttproject.biz/ (accessed June 4, 2013)
+\end{itemize}
+\end{itemize}
 }
 \end{document}
