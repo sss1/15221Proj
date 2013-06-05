@@ -1,0 +1,22 @@
+Abstract Model: Direct Graph, obtained by processing the input file
+                then get a 2-D list as adjacency list.
+Programming Languages: Python, Bash Script Language (for split process).
+
+Several Methods:
+1. Brute Force.
+    Tried on 16 GHC machines, each ran 15 hours.
+    Resulting longest: 247.
+    Process became exponentially slower. Halt.
+
+2. Knowing that if we have Directed Acyclic Graph (DAG),
+   we can get the longest path in polynomial time, we tried to
+   remove edges from the given graph structure to make DAGs.
+   However, the processing time to generate and analysis each DAG
+   was 1s. Too long. Halt.
+
+3. (Current method) Given the movie chanes of length 240+, we revert
+   the direction of all edges and see whether we can trace back
+   further to generate longer paths. To be done tonight.
+
+4. ... ...
+
