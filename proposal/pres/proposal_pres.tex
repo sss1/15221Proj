@@ -54,7 +54,7 @@ the ``longest'' chain is
 
 \frame{\frametitle{The Problem}
 \begin{itemize}
-\item Equivalent to finding a Longest Simple Path in a directed graph
+\item Equivalent to finding a Longest Path in a directed graph
 \pause
 \item The Longest Path Problem is NP-Complete
 \end{itemize}
@@ -72,9 +72,9 @@ the ``longest'' chain is
 
 \section{Benefits}
 \frame{\frametitle{Benefits}
-Our group will gain experience
+The members of our group will gain experience
 \begin{itemize}
-\item programming in Python (and maybe C, MATLAB, or another language)
+\item programming in Python (and maybe C or MATLAB)
 \item working as a group toward a common goal
 \item handling and processing a large data set
 \item implementing graph algorithms
@@ -99,17 +99,19 @@ Our group will gain experience
 \item Constructed chain of 247 titles
 \item Progress slowed exponentially
 \end{itemize}
+\pause
 \item Acyclic Subgraphs
 \begin{itemize}
-\item A poly-time algorithm using topological sort is known for acyclic graphs
+\item A poly-time topo-sort algorithm is known for acyclic graphs
 \item Try to find acyclic subgraphs
 \item Too many cycles -- took too long to generate subgraphs
 \end{itemize}
+\pause
 \item Working backward
 \begin{itemize}
-\item Tried extending chain of 247 titles using brute force without success
-\item Haven't tried adding to the beginning of the chain
-\item Work in progress
+\item Stuck at 247 titles using brute force
+\item Reverse graph edges and add to the beginning of the chain
+\item Work in progress -- currently managed 274 titles
 \end{itemize}
 \end{enumerate}
 }
@@ -126,16 +128,38 @@ Our group will gain experience
 \frame{\frametitle{Evaluation}
 \begin{enumerate}
 \item Length of the longest chain we find
-\item Compare performance of a few different algorithms
+\pause
+\item Compare performance of a different algorithms
+\begin{itemize}
+\item ideally, decide on a ``best'' algorithm for the problem
+\end{itemize}
+\pause
 \item Predict runtime for entire computation by solving tractable subproblems
+and extrapolating
 \end{enumerate}
 }
 
 \section{Qualifications}
 \frame{\frametitle{Qualifications}
+All members of our team have
+\begin{itemize}
+\item programming Experience in Python
+\item courses in Data Structures/Algorithms and Discrete Math
+\end{itemize}
+}
+
+\frame{\frametitle{Qualifications}
 \begin{itemize}
 \item Sung Uk Ryu
+\begin{itemize}
+\item Junior Computer Science and Finance Double Major 
+\item Experience with scheduled, task-oriented projects
+\end{itemize}
 \item Eugene Scanlon
+\begin{itemize}
+\item Junior CS Major with minor in Music Technology
+\item Programming experience in Python, C0, C, Nyquist
+\end{itemize}
 \end{itemize}
 }
 
@@ -144,17 +168,14 @@ Our group will gain experience
 \item Shashank Singh
 \begin{itemize}
 \item Senior CS/Math Dual Degree
-\item Completed undergrad CS/Math curricula, including courses specifically in
-Data Structures/Algorithms and Discrete Math (15-121, 15-211, 15-251, 15-451,
-21-301, 21-484)
-\item TA'd 15-211 and 15-251
-\item Have extensive experience analyzing large data sets for research
+\item Have TA'd 15-211 and 15-251
+\item Experience analyzing large data sets with C and MATLAB
 \end{itemize}
 \item Jimmy Zong
 \begin{itemize}
 \item Sophomore CS major
-\item Completed 15-112, \ldots
-\item Done \ldots projects
+\item Experience with BASH scripting and C programming
+\item Experience running distributed computations on a UNIX server
 \end{itemize}
 \end{itemize}
 }
@@ -167,6 +188,10 @@ Data Structures/Algorithms and Discrete Math (15-121, 15-211, 15-251, 15-451,
 \item Gantt Chart created using software from the Gantt Project
 \begin{itemize}
 \item http://www.ganttproject.biz/ (accessed June 4, 2013)
+\end{itemize}
+\item Git repository hosted on GitHub
+\begin{itemize}
+\item https://github.com/
 \end{itemize}
 \end{itemize}
 }
