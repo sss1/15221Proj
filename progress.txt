@@ -1,0 +1,7 @@
+Wed Jun  5 23:02:47 EDT 2013
+Started 11 process in 11 GHC machines for Algorithm 3.
+As of now, the longest chain has 274 elements.
+Because GHC machines will all restart in 6 hours, this run
+will be short, so I don't think there will be signicant
+increase in the length.
+
