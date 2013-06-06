@@ -5,3 +5,10 @@ Because GHC machines will all restart in 6 hours, this run
 will be short, so I don't think there will be signicant
 increase in the length.
 
+Thu Jun  6 09:06:46 EDT 2013
+Checked the result. Longest is 277 (two of them got that
+far). The rest include some 274, 270, etc. Maybe I will
+run more processes tonight (maybe 10 processes per machine
+on 15 machines), but I need to figure out a way to automate
+this process (I cannot type in the command for each manually).
+
