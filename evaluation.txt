@@ -1,0 +1,10 @@
+1. Length of longest chain
+
+2. We can run different algorithms and compare them by
+    (a) how long they take to find chains of a given length
+    (b) the length of the longest chain they find in a fixed amount of time
+This would allow us to report a `best' algorithm out of those we try
+
+3. We can attempt to predict the time needed to solve to problem completely by
+running our algorithms on tractable subproblems of varying sizes and
+extrapolating the running times.
