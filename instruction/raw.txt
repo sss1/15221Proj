@@ -1,6 +1,6 @@
 via Windows/Mac Python install
 Install Python
-from: http://www.python.org/download/releases/2.7.2/
+from: http://www.python.org/download/releases/2.7.5/
 Note: probably already installed on Macs!
 Note: be sure to use appropriate 32-bit or 64-bit install!
 Add the python directory to your system path (also probably not required on Macs, here are some instructions for Windows):
