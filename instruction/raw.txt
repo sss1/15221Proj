@@ -1,0 +1,21 @@
+via Windows/Mac Python install
+Install Python
+from: http://www.python.org/download/releases/2.7.2/
+Note: probably already installed on Macs!
+Note: be sure to use appropriate 32-bit or 64-bit install!
+Add the python directory to your system path (also probably not required on Macs, here are some instructions for Windows):
+First, you have to find where Python installed itself.  You might try to look for it in one of these locations:
+c:\program files\python27
+c:\program files (x86)\python27
+c:\python27
+Once you found it, you have to tell the Command Shell where to find it (silly, but true), as such:
+Go to Start / Control Panel / System / Advanced System Settings / Environment Variables
+On bottom half of window (System Variables), select Path and click Edit button
+In the variable value textbox, go to the end and type a semicolon, then...
+Type the path to the directory where you found the Python install (back in step 1 above)
+Click ok as needed (three times, probably) to finish the procedure.
+Changes will be visible the next time you open a Command Prompt (or shell or terminal)
+Run a Command Prompt or Command Shell or Terminal
+Type   python   or type    python myscript.py
+(If it says that python is not recognized or found, it means you did not set your path correctly above.  Please see a course staff member for assistance!)
+To run IDLE (Python GUI):  either run IDLE from Start menu, or type:  python -m idlelib.idle
