@@ -40,7 +40,7 @@ Python 2.7 scripts. We assume some familiarity with web browsing, including
 downloading and opening files.
 \myhrule
 {\bf Objective:} This document explains how to download, install, and
-configure Python for your Windows 7 computer, allowing all users of your
+configure Python for your 64-bit Windows 7 computer, allowing all users of your
 computer to run Python scripts and programs from the Windows Command Line.
 \myhrule
 {\bf You will need:}\\
@@ -70,8 +70,7 @@ installer.
 {\bf In this step, you will download the Python Installer, a program which will
 install Python on your computer. This step has 2 substeps.}
 \begin{enumerate}[a.]
-\item Open the URL
-{\color{blue} \underline{http://www.python.org/download/releases/2.7.5/}} in
+\item Open the URL \texttt{http://www.python.org/download/releases/2.7.5/} in
 your web browser.
 \item Locate and single-click ``Windows X86-64 MSI Installer'' (highlighted in
 Figure \ref{fig:dia1}) to download the installer.
@@ -100,30 +99,40 @@ location will depend on your web-browser's download settings.
 \ref{fig:dia2}).
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=0.4\textwidth]{dia2}
+\includegraphics[width=0.5\textwidth]{dia2}
 \end{center}
 \vspace{-0.5cm}
-\caption{``Security Warning'' window (steps 2b. and 3e.)}
+\caption{``Security Warning'' window (step 2b.)}
 \label{fig:dia2}
 \end{figure}
 \item In the next window, click ``Next'' without changing any settings.
 \item Typically, the default installation directory will suffice. To change the
 installation directory, select from the drop down menu or type the directory
-path in the text box labeled in Figure \ref{fig:dia3}. Click ``Next'' when
-done.
+path in the text box labeled in Figure \ref{fig:dia3}. {\bf Make sure to choose
+a directory that is currently empty.} Click ``Next'' when done.
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=0.45\textwidth]{dia3}
+\includegraphics[width=0.55\textwidth]{dia3}
 \end{center}
 \vspace{-0.5cm}
 \caption{Choosing an Installation Directory window (step 2e.)}
 \label{fig:dia3}
 \end{figure}
+\newpage
 \item Click ``Next'' without changing any settings. Wait for the installation
-to complete. Then, click ``Finish'' to close the installation program.
+to complete. If, during the installation, a ``User Account Control'' window
+appears, click  ``Yes'' (labeled in Figure \ref{fig:dia11}). Once the
+installation is complete, click ``Finish'' to close the installation program.
 \end{enumerate}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{dia11}
+\end{center}
+\caption{The User Account Control window (step 2f.)}
+\label{fig:dia11}
+\end{figure}
 \vfill
-{\bf Step 3} (on page 3) will begin explaining how to configure your computer
+{\bf Step 3} (on page 4) will begin explaining how to configure your computer
 to run Python.
 \myhrule
 
@@ -158,15 +167,6 @@ corner of the Control Panel window (as in Figure \ref{fig:dia5}).
 \caption{The Control Panel (steps 3c. and 3d.)}
 \label{fig:dia5}
 \end{figure}
-\item If a ``User Account Control'' window appears, click ``Yes'' (labeled in
-Figure \ref{fig:dia11}).
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=0.6\textwidth]{dia11}
-\end{center}
-\caption{The User Account Control window (step 3e.)}
-\label{fig:dia11}
-\end{figure}
 \item In the ``System Properties'' window, click ``Environment
 Variables'' (labeled in Figure \ref{fig:dia6}).
 \begin{figure}[h]
@@ -180,7 +180,7 @@ Variables'' (labeled in Figure \ref{fig:dia6}).
 \end{figure}
 \end{enumerate}
 \vfill
-{\bf Step 4} (on page 5) will show you how to modify the Path Environment
+{\bf Step 4} (on page 6) will show you how to modify the Path Environment
 Variable.
 \myhrule
 
@@ -194,8 +194,8 @@ command line the location of your Python Installation. This step has
 
 {\bf \color{red} \underline{Caution:}} Important system services depend on
 Environment Variables. Do not modify any Environment Variables
-except Path, and do not remove anything from the Path variable; only {\bf add}
-information to the Path variable. If you make a mistake, click ``Cancel'' to
+except Path. Only {\bf add} information to the Path variable. If you make a
+mistake, click ``Cancel'' in the bottom right corner of the current window to
 undo any changes.
 
 \begin{enumerate}[a.]
@@ -211,7 +211,7 @@ Variables'' section scroll down to locate the Path variable, as shown in Figure
 \label{fig:dia7}
 \end{figure}
 \item An ``Edit System Variable'' window will appear. In the ``Variable value''
-box (do not delete anything!), add ``\texttt{;C:}'' followed by the name of the
+box ({\bf do not delete anything!}), add ``\texttt{;C:}'' followed by the name of the
 directory you selected in step 2e. (for the default directory, add
 ``\texttt{;C:\textbackslash Python27}'' (without quotes), as shown in Figure
 \ref{fig:dia8}).
@@ -228,7 +228,7 @@ directory you selected in step 2e. (for the default directory, add
 \end{enumerate}
 \vfill
 You now have Python 2.7 installed and configured on your computer. {\bf Step 5}
-(on page 6) will show you how to access the Python interpreter to start using
+(on page 7) will show you how to access the Python interpreter to start using
 Python right away.
 \myhrule
 
@@ -253,7 +253,7 @@ the Command Line Python Interpreter. This step has 4 substeps.}\\
 \caption{Accessing the command line from the Start Menu (steps 5a-5c.)}
 \label{fig:dia9}
 \end{figure}
-\item A Command Line window should appear. Type ``Python'' and press Enter.
+\item A Command Line window should appear. Type ``python'' and press Enter.
 Python should begin running, as shown in Figure \ref{fig:dia10}.
 \begin{figure}[h]
 \begin{center}
