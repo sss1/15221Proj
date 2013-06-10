@@ -7,12 +7,14 @@
 \usepackage{color}
 \usepackage{enumerate}
 
-% \hrule with 0.5cm spaces above and below
+% \hrule with 0.3cm spaces above and below
 \newcommand{\myhrule}{\vspace{0.3cm}\hrule\vspace{0.3cm}}
 % skip page-numbering on the Title Page
 \pagenumbering{gobble}
+
 %%%%%%%%%%%%%%%%%%%%%%%%HEADER%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{How to Download, Install, and Configure Python 2.7\\ on Windows 7}
+\title{How to Download, Install, and Configure Python 2.7\\
+on 64-bit Windows 7}
 \author{
   Singh, Shashank \\
   \texttt{sss1@andrew.cmu.edu}
@@ -22,23 +24,19 @@
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%CONTENT MACROS%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{document}
 % TITLE PAGE
 \begin{titlepage}
 \maketitle
 \vfill
-{\bf \color{red} \underline{Caution:}} Before installing Python 2.7, you must
-first uninstall any previous versions of Python. Failure to do so may result in
+{\bf \color{red} \underline{Important:}} Before installing Python 2.7, you must
+uninstall any other versions of Python. Failure to do so may result in
 incompatibility issues. See \texttt{http://www.wikihow.com/Uninstall-Python}
 for instructions on how to uninstall Python.
 \myhrule
 {\bf Target Audience:}\\
 Anyone who knows what Python 2.7 is and wants their computer to be able to run
-Python 2.7 scripts. We assume familiarity with basic web browsing, including
+Python 2.7 scripts. We assume some familiarity with web browsing, including
 downloading and opening files.
 \myhrule
 {\bf Objective:} This document explains how to download, install, and
@@ -93,8 +91,7 @@ Figure \ref{fig:dia1}) to download the installer.
 \newpage
 {\Large {\bf Step 2: Installing Python}}
 \myhrule
-{\bf In this step, you will install Python using the file you downloaded in
-Step 1.}
+{\bf This step has 6 substeps.}
 \begin{enumerate}[a.]
 \item Locate the file \texttt{python-2.7.5.msi} on your computer. The file
 location will depend on your web-browser's download settings.
@@ -134,11 +131,10 @@ to run Python.
 \newpage
 {\Large {\bf Step 3: Opening the Environment Variables Menu}}
 \myhrule
-{\bf In this step, you will open the Environment Variables Menu in order to
-modify Environment Variables. This is necessary for your command line to
-run Python files.}
+{\bf Now, you will modify the Path Environment Variable. This is necessary for
+your command line to run Python files. This step has 6 substeps}.
 \begin{enumerate}[a.]
-\item Open the Start Menu by clicking the bottom left corner of you screen
+\item Open the Start Menu by clicking the bottom left corner of your screen
 (labeled in Figure \ref{fig:dia4}).
 \item Click on ``Control Panel'' (labeled in Figure \ref{fig:dia4}) to open
 the Control Panel.
@@ -162,8 +158,8 @@ corner of the Control Panel window (as in Figure \ref{fig:dia5}).
 \caption{The Control Panel (steps 3c. and 3d.)}
 \label{fig:dia5}
 \end{figure}
-\item If a ``User Account Control'' window appears, click ``Yes'' (as in Figure
-\ref{fig:dia11}).
+\item If a ``User Account Control'' window appears, click ``Yes'' (labeled in
+Figure \ref{fig:dia11}).
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.6\textwidth]{dia11}
@@ -193,12 +189,14 @@ Variable.
 {\Large {\bf Step 4: Modifying the Path Environment Variable}}
 \myhrule
 {\bf In this step, you will modify the Path environment variable, telling your
-command line the location of your Python Installation.}\\
+command line the location of your Python Installation. This step has
+3 substeps.}\\
 
-{\bf \color{red} \underline{Warning:}} Important system services depend on
+{\bf \color{red} \underline{Caution:}} Important system services depend on
 Environment Variables. Do not modify any Environment Variables
-except Path, and do not remove anything from the Path variable; you should only
-{\bf add} information to the Path variable.
+except Path, and do not remove anything from the Path variable; only {\bf add}
+information to the Path variable. If you make a mistake, click ``Cancel'' to
+undo any changes.
 
 \begin{enumerate}[a.]
 \item In the ``Environment Variables'' window that appears, under the ``System
@@ -215,7 +213,8 @@ Variables'' section scroll down to locate the Path variable, as shown in Figure
 \item An ``Edit System Variable'' window will appear. In the ``Variable value''
 box (do not delete anything!), add ``\texttt{;C:}'' followed by the name of the
 directory you selected in step 2e. (for the default directory, add
-``\texttt{;C:Python27}'' (without quotes), as shown in Figure \ref{fig:dia8}).
+``\texttt{;C:\textbackslash Python27}'' (without quotes), as shown in Figure
+\ref{fig:dia8}).
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.4\textwidth]{dia8}
@@ -238,14 +237,14 @@ Python right away.
 {\Large {\bf Step 5: Opening the Python Interpreter}}
 \myhrule
 {\bf In this step, you will verify that the previous steps worked by opening
-the Command Line Python Interpreter.}\\
+the Command Line Python Interpreter. This step has 4 substeps.}\\
 
 \begin{enumerate}[a.]
-\item Open the Start Menu by clicking the bottom left corner of you screen
+\item Open the Start Menu by clicking the bottom left corner of your screen
 (labeled in Figure \ref{fig:dia9}).
 \item In the search box, type ``cmd'' (without quotes), as shown in Figure
 \ref{fig:dia9}).
-\item Click on ``cmd'' (labelled in Figure \ref{fig:dia9}).
+\item Click on ``cmd'' (labeled in Figure \ref{fig:dia9}).
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.4\textwidth]{dia9}
@@ -255,8 +254,7 @@ the Command Line Python Interpreter.}\\
 \label{fig:dia9}
 \end{figure}
 \item A Command Line window should appear. Type ``Python'' and press Enter.
-Python should begin running, as shown in Figure \ref{fig:dia10}. Once the
-``\texttt{> > >}'' prompt appears, you may begin entering Python commands.
+Python should begin running, as shown in Figure \ref{fig:dia10}.
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.8\textwidth]{dia10}
@@ -266,7 +264,5 @@ Python should begin running, as shown in Figure \ref{fig:dia10}. Once the
 \label{fig:dia10}
 \end{figure}
 \end{enumerate}
-
-For tutorials and other help using Python, see the documentation at
-\texttt{http://www.python.org/}.
+You may now begin entering Python commands.
 \end{document}
