@@ -38,10 +38,10 @@ for instructions on how to uninstall Python.
 \myhrule
 {\bf Target Audience:}\\
 Anyone who knows what Python 2.7 is and wants their computer to be able to run
-Python 2.7 files. We assume familiarity with basic web browsing, including
+Python 2.7 scripts. We assume familiarity with basic web browsing, including
 downloading and opening files.
 \myhrule
-{\bf Objective:} These instructions explain how to download, install, and
+{\bf Objective:} This document explains how to download, install, and
 configure Python for your Windows 7 computer, allowing all users of your
 computer to run Python scripts and programs from the Windows Command Line.
 \myhrule
@@ -55,8 +55,10 @@ Completing these {\bf 5 steps} should take about {\bf 10 minutes}.
 {\bf Outcome:}\\
 After completing these steps, all users on your computer should be able to run
 the Python 2.7 Interpreter, as well as Python 2.7 scripts ({\bf .py} files) and
-compiled Python 2.7 programs ({\bf .pyc} files).
-\vspace{3cm}
+compiled Python 2.7 programs ({\bf .pyc} files).\\\\
+This document does not explain how to use Python 2.7; for instructions on how
+to use Python 2.7, see \texttt{http://www.python.org/}.
+\vspace{2cm}
 
 {\bf Step 1} (on page 1) will show you how to download the Python
 installer.
@@ -64,7 +66,7 @@ installer.
 \end{titlepage}
 
 \pagenumbering{arabic}
-% PAGE 1
+% STEP 1
 {\Large {\bf Step 1: Downloading the Python Installer}}
 \myhrule
 {\bf In this step, you will download the Python Installer, a program which will
@@ -87,7 +89,7 @@ Figure \ref{fig:dia1}) to download the installer.
 {\bf Step 2} (on page 2) will show you how to use this file to Install Python.
 \myhrule
 
-% PAGE 2
+% STEP 2
 \newpage
 {\Large {\bf Step 2: Installing Python}}
 \myhrule
@@ -121,14 +123,14 @@ done.
 \label{fig:dia3}
 \end{figure}
 \item Click ``Next'' without changing any settings. Wait for the installation
-to complete. Then click ``Finish'' to close the installation program.
+to complete. Then, click ``Finish'' to close the installation program.
 \end{enumerate}
 \vfill
 {\bf Step 3} (on page 3) will begin explaining how to configure your computer
 to run Python.
 \myhrule
 
-% PAGE 3
+% STEP 3
 \newpage
 {\Large {\bf Step 3: Opening the Environment Variables Menu}}
 \myhrule
@@ -169,25 +171,102 @@ corner of the Control Panel window (as in Figure \ref{fig:dia5}).
 \caption{The User Account Control window (step 3e.)}
 \label{fig:dia11}
 \end{figure}
+\item In the ``System Properties'' window, click ``Environment
+Variables'' (labeled in Figure \ref{fig:dia6}).
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{dia6}
+\end{center}
+\vspace{-0.5cm}
+\caption{System Properties window and the Environment Variables button (step
+3f.)}
+\label{fig:dia6}
+\end{figure}
 \end{enumerate}
 \vfill
-{\bf Step 4} (on page 5) will show you how to modify the PATH Environment
+{\bf Step 4} (on page 5) will show you how to modify the Path Environment
 Variable.
 \myhrule
 
-% PAGE 4
+% STEP 4
 \newpage
-{\Large {\bf Step 4: Modifying the PATH Environment Variable}}
+{\Large {\bf Step 4: Modifying the Path Environment Variable}}
 \myhrule
-{\bf In this step, you will modify the PATH environment variable, telling your
+{\bf In this step, you will modify the Path environment variable, telling your
 command line the location of your Python Installation.}\\
 
 {\bf \color{red} \underline{Warning:}} Important system services depend on
 Environment Variables. Do not modify any Environment Variables
-except PATH, and do not remove anything from the PATH variable; you should only
-{\bf add} information to the PATH variable.
+except Path, and do not remove anything from the Path variable; you should only
+{\bf add} information to the Path variable.
 
 \begin{enumerate}[a.]
-\item
+\item In the ``Environment Variables'' window that appears, under the ``System
+Variables'' section scroll down to locate the Path variable, as shown in Figure
+\ref{fig:dia7}. Double-click the word ``Path.''
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.4\textwidth]{dia7}
+\end{center}
+\vspace{-0.5cm}
+\caption{Environment Variables window and the Path variable (step 4a.)}
+\label{fig:dia7}
+\end{figure}
+\item An ``Edit System Variable'' window will appear. In the ``Variable value''
+box (do not delete anything!), add ``\texttt{;C:}'' followed by the name of the
+directory you selected in step 2e. (for the default directory, add
+``\texttt{;C:Python27}'' (without quotes), as shown in Figure \ref{fig:dia8}).
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.4\textwidth]{dia8}
+\end{center}
+\vspace{-0.5cm}
+\caption{The Edit System Variable window (step 4b.)}
+\label{fig:dia8}
+\end{figure}
+\item Click ``OK'' to close each of the ``Edit System Variable'' and
+``Environment Variables'' windows.
 \end{enumerate}
+\vfill
+You now have Python 2.7 installed and configured on your computer. {\bf Step 5}
+(on page 6) will show you how to access the Python interpreter to start using
+Python right away.
+\myhrule
+
+% STEP 5
+\newpage
+{\Large {\bf Step 5: Opening the Python Interpreter}}
+\myhrule
+{\bf In this step, you will verify that the previous steps worked by opening
+the Command Line Python Interpreter.}\\
+
+\begin{enumerate}[a.]
+\item Open the Start Menu by clicking the bottom left corner of you screen
+(labeled in Figure \ref{fig:dia9}).
+\item In the search box, type ``cmd'' (without quotes), as shown in Figure
+\ref{fig:dia9}).
+\item Click on ``cmd'' (labelled in Figure \ref{fig:dia9}).
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.4\textwidth]{dia9}
+\end{center}
+\vspace{-0.5cm}
+\caption{Accessing the command line from the Start Menu (steps 5a-5c.)}
+\label{fig:dia9}
+\end{figure}
+\item A Command Line window should appear. Type ``Python'' and press Enter.
+Python should begin running, as shown in Figure \ref{fig:dia10}. Once the
+``\texttt{> > >}'' prompt appears, you may begin entering Python commands.
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{dia10}
+\end{center}
+\vspace{-0.5cm}
+\caption{The Windows Command Line running the Python Interpreter (step 5d.)}
+\label{fig:dia10}
+\end{figure}
+\end{enumerate}
+
+For tutorials and other help using Python, see the documentation at
+\texttt{http://www.python.org/}.
 \end{document}
