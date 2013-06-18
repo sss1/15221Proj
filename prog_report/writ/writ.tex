@@ -7,6 +7,7 @@
 \usepackage{pdfpages}
 \usepackage[toc,page]{appendix}
 \usepackage{multicol}
+\usepackage{enumitem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%HEADER%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{
@@ -25,82 +26,125 @@ Jimmy Zong
 
 \begin{document}
 
-\pagenumbering{gobble} % exclude page-numbering for title page and ToC
+\pagenumbering{gobble} % exclude page-numbering for title page
 \includepdf{cover/cover.pdf}
 
+\pagenumbering{roman} % include Roman page-numbering on ToC
 \tableofcontents
 
 \newpage
-\pagenumbering{arabic} % include page-numbering starting here
+\pagenumbering{arabic} % include Arabic page-numbering starting here
 \section{Overview}
-We first explain the context of this report and the Movie-Chain-Runner Problem.
-\subsection{This Report}
-This report documents our progress in solving the Movie-Chain-Runner Problem
-(discussed below) as of June 17, 2013, as well as our plans for how to proceed
-up until the project deadline of June 27, 2013.
+This report documents our progress on the Movie-Chain-Runner Problem
+(discussed in section 2) as of June 17, 2013, as well as our plans for how to
+proceed until the project deadline of June 27, 2013. We also discuss and
+justify some changes to the plan presented in our project proposal
+(submitted June 4, 2013).
 
-\subsection{The Movie-Chain-Runner Project}
+\vspace{-0.2cm}
+\section{The Movie-Chain-Runner Problem}
+The Movie-Chain-Runner Problem is to find the longest chain of overlapping
+titles in a list of movie titles, where two titles are said to overlap if some
+suffix of the first movie is identical to some prefix of the second movie. For
+example, in the list
+\begin{itemize}[noitemsep]
+\item Day of the Dead
+\item Live and Let Die
+\item Dead Poets' Society
+\item Die Another Day
+\item The Last Samurai
+\end{itemize}
+the longest chain consists of 4 titles:
 
+\begin{center}
+Live and Let Die Another Day of the Dead Poets' Society
+\end{center}
+By appropriately representing the movie list as a graph, the Movie-Chain-Runner
+Problem can be shown to be equivalent to the Longest Path Problem (finding the
+longest simple path in a directed graph). The Longest Path Problem is well
+known to be NP-Complete, meaning that no efficient algorithm exists to find
+longest paths in large graphs, including our movie title graph. A review of the
+literature also reveals that good approximate longest paths also cannot be
+found efficiently in large graphs. Thus, our project is to study the movie
+title graph and innovate ways to find long paths in the graph.
+
+\vspace{-0.2cm}
 \section{Progress}
-We present our progress in three sections: General Progress, Status, and
+We discuss our progress in three sections: General Progress, Status, and
 Projections.
 
+\vspace{-0.2cm}
 \subsection{General Progress}
-Here we discuss the accomplishments of our project thus far.
-
 Our first step was to reconstruct the list of movie titles as a directed graph,
-with an edge from title $A$ to title $B$ when $B$ can follow $A$ in a movie
-chain, reducing the problem to the well-known Longest Path Problem.
-We proceeded to implement a greedy brute force algorithm which simply followed
+reducing the problem to the well-known Longest Path Problem.
+We proceeded to implement a greedy brute force algorithm that simply followed
 as many paths as possible. This quickly constructed a path of 243 titles and
-then ceased to make appreciable progress. The majority of our efforts have
-since been towards honing and augmenting this brute force algorithm.
+then ceased to make appreciable progress.
 
-We have 
+The majority of our efforts have since been towards augmenting this brute force
+algorithm. We have run the algorithm ``backwards'' to extend the beginning of
+the chain. We have also attempted running the algorithm in parallel over
+several cluster computers, boosting our processing power and thus increasing
+the number of possible paths we can check. We are currently running the brute
+force algorithm on subsections of the current longest chain, in an attempt to
+lengthen the middle of the chain.
 
+We also attempted a theoretically-inspired algorithm which computed acyclic
+subgraphs of our graph and then ran a polynomial time Longest Path algorithm
+known for directed acyclic graphs. However, the number of cycles proved too
+large to generate the subgraphs in a reasonable amount of time, and so we
+abandoned this effort.
+
+\vspace{-0.2cm}
 \subsection{Status}
-Here we evaluate the current state of our project and discuss our ability to
-meet deadlines set in our Proposal.
+Our current longest chain (included in Appendix A) consists of 278 titles,
+7 titles short of our June 17 goal of 285 titles. Since extending the movie chain has
+proven more difficult than we anticipated, we have decided to scale back our
+final goal from 300 titles to 285 titles. Since 285 titles is the necessary
+criterion for receiving an A on the project, the benefits of 300 titles are
+primarily cosmetic, and so we consider this change acceptable.
 
-Our longest chain currently consists of ??? titles and ???? words. This falls
-short of our scheduled June 17 goal of 285 titles and ???? words by ? titles
-and ?? words.
-
-Figure \ref{fig:gantto} on page ? shows the original Gantt chart presented in
-our project proposal. We have made ?????????????? changes.
+Figure \ref{fig:gantto} below shows the original Gantt chart presented in
+our project proposal. Figure \ref{fig:ganttn} below shows our revised Gantt
+chart, as of June 17. The only changes are that the 300 title goal originally
+set for June 25 has been eliminated and the 285 title goal originally set for
+June 17 has been extended to June 25.
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=\textwidth]{gantto}
 \end{center}
-\vspace{-0.5cm}
+\vspace{-0.7cm}
 \caption{Our original Gantt chart.}
 \label{fig:gantto}
 \end{figure}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=\textwidth]{ganttn}
+\end{center}
+\vspace{-0.7cm}
+\caption{Our revised Gantt chart.}
+\label{fig:ganttn}
+\includegraphics[width=0.2\textwidth]{key}
+\end{figure}
 
+\newpage
 \subsection{Projections}
-Here we discuss our goals from now until the final project deadline (June 27,
-2013) and how we intend to accomplish these goals.
-
-Since 285 titles and ???? words is the threshold for receiving A on this
-project, the benefits of achieving 300 titles are primarily cosmetic. Thus, we
-have reduced our final goal to 285 titles.
-
-We have propose 3 approaches to this goal
-
-Although we have devoted much computational power toward extending the longest
-chain at either end, we have not considered a potentially large number
+We expect that we will accomplish our revised 285 title goal for June 25 and
+propose 2 simple approaches to this goal.
+Firstly, although we have devoted much computational power toward extending the
+longest chain at either end, we have not considered a potentially large number
 of alternative paths between nodes in the chain. Thus, we will attempt to
 compute, for adjacent or nearby nodes, alternative (longer) chains connecting
-the same nodes. We are also considering ways to ``trim'' the graph by removing
-nodes unlikely to be in the longest chain, thus reducing the number of possible
-paths that must be considered.
+the same nodes. Secondly, we are considering ways to ``trim'' the graph by
+removing nodes unlikely to be in the longest chain, thus reducing the number of
+possible paths that must be considered.
 
 If simple methods prove insufficient, we may also implement a color-coding
-algorithm proposed by Alon et al.
+algorithm proposed by Alon et al.\hspace{-0.2cm}
 \footnote{Noga Alon , Raphael Yuster , Uri Zwick, Color-coding, Journal of the
 ACM (JACM), v.42 n.4, p.844-856, July 1995. (accessed June 16, 2013 at
 \texttt{http://dl.acm.org/citation.cfm?id=210337}).}
-or one of several genetic algorithms proposed by Portugal et al.,
+or the genetic algorithms studied by Portugal et al.,\hspace{-0.2cm}
 \footnote{
 D. Portugal, C. H. Antunes, R. Rocha, ``A Study of Genetic Algorithms for
 Approximating the Longest Path in Generic Graphs,'' Proc. of the IEEE SMC, pp.
@@ -110,16 +154,23 @@ navigation=1}).}
 although, due to the implementation complexity of these algorithms, we hope
 this will be unnecessary.
 
-\section{Recommendations}
+\section{Recomendations}
+Our only recomendation is the change of the final project goal from 300 titles
+to 285 titles, as discussed in the Progress section above.
 
 \section{Discussion}
+Our final deliverable will now be a chain of at least 285 movie titles rather
+than a chain of at least 300 movie titles. If, however, we achieve our 285
+title goal before our deadline of June 25, we may spend the remaining time
+attempting to extend the chain further.
 
+\newpage
 \begin{appendices}
 \section{Our Longest Movie Chain}
-Here, we include our current longest movie chain, with ??? titles and ????
+Here, we include our current longest movie chain, with 278 titles and 885
 words:
-{\tiny
-\begin{multicols}{3}
+{\footnotesize
+\begin{multicols}{2}
 \begin{verbatim}
 THE RESCUERS
 THE RESCUERS DOWN UNDER

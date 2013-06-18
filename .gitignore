@@ -9,6 +9,8 @@
 *.out
 *.dvi
 *.eps
+gantt*
+key.pdf
 
 # C extensions
 *.so
