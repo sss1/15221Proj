@@ -1,0 +1,168 @@
+%%%%%%%%%%%%%% COPYRIGHT INFORMATION %%%%%%%%%%%%%%
+% Template by
+% Author: Sascha Frank 
+% Nov. 2006
+% University Freiburg 
+% www.informatik.uni-freiburg.de/~frank/
+% Distributed freely for non-commercial use
+
+%%%%%%%%%%%%%%%%%%%%% PREAMBLE %%%%%%%%%%%%%%%%%%%%%
+\documentclass{beamer}
+\usepackage{beamerthemeshadow}
+\usepackage{lmodern}
+\usepackage{pifont}
+\usepackage{color}
+
+% include frame number on each frame
+\setbeamertemplate{footline}{\quad \insertframenumber/\inserttotalframenumber}
+\newcommand{\cmark}{\ding{51}} % check-mark
+\newcommand{\xmark}{\ding{55}} % X-mark
+
+%%%%%%%%%%%%%%%%%%%%% DOCUMENT %%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\title{Movie-Chain-Runner Problem:\\ Final Report}
+\author[Singh,Zong]{Shashank Singh \and Jimmy Zong}
+\date{June 27, 2013}
+\frame{\titlepage}
+
+\frame{\frametitle{Outline}\tableofcontents}
+
+\section{Team Members}
+\frame{\frametitle{Team Members}
+\begin{itemize}
+\item Sung Uk Ryu
+\item Eugene Scanlon
+\item Shashank Singh
+\item Jimmy Zong
+\end{itemize}
+}
+
+\section{Problem Introduction}
+\frame{\frametitle{The Problem}
+\begin{block}{The Problem}
+Find the ``longest'' list of overlapping titles in a list of movie titles.
+\end{block}
+
+For Example: In the list
+\begin{itemize}
+\item Day of the Dead
+\item Live and Let Die
+\item Dead Poets' Society
+\item Die Another Day
+\item The Last Samurai
+\end{itemize}
+the ``longest'' chain is
+\begin{center}
+``Live and Let Die Another Day of the Dead Poets' Society.''
+\end{center}
+}
+
+\frame{\frametitle{The Problem}
+\begin{itemize}
+\item Equivalent to finding a Longest Path in a directed graph
+\pause
+\item The Longest Path Problem is NP-hard, meaning that there is no efficient
+algorithm for solving it on a large graph
+\end{itemize}
+}
+
+\frame{\frametitle{Previous Attempts}
+\begin{itemize}
+\item Summer 2010   --  255 titles
+\item Fall 2010     --  271 titles (845 words)
+\item Summer 2011   --  311 titles (997 words)
+\item Fall 2011     --  323 titles (1030 words)
+\item Spring 2012   --  327 titles (1055 words)
+\end{itemize}
+}
+
+\section{Approach}
+\frame{\frametitle{Approach}
+\begin{itemize}
+\item Algorithms
+\item Project Timeline (Gantt Chart)
+\end{itemize}
+}
+
+\subsection{Algorithms}
+\frame{\frametitle{Algorithms}
+\begin{enumerate}
+\item Brute Force
+\begin{itemize}
+\item Tried running on 16 GHC machines for 15 hours
+\item Constructed chain of 247 titles
+\item Progress slowed exponentially
+\end{itemize}
+\pause
+\item Acyclic Subgraphs
+\begin{itemize}
+\item A poly-time topo-sort algorithm is known for acyclic graphs
+\item Try to find acyclic subgraphs
+\item Too many cycles -- took too long to generate subgraphs
+\end{itemize}
+\pause
+\item Working backward
+\begin{itemize}
+\item Stuck at 247 titles using brute force
+\item Reverse graph edges and add to the beginning of the chain
+\item Work in progress -- currently managed 274 titles
+\end{itemize}
+\end{enumerate}
+}
+
+\section{Evaluation}
+\frame{\frametitle{Evaluation}
+\begin{enumerate}
+\item Length of the longest chain we find
+\pause
+\item Compare performance of a different algorithms
+\begin{itemize}
+\item ideally, decide on a ``best'' algorithm for the problem
+\end{itemize}
+\pause
+\item Predict runtime for entire computation by solving tractable subproblems
+and extrapolating
+\end{enumerate}
+}
+
+\section{Benefits}
+\frame{\frametitle{Benefits}
+\onslide<1->{The members of our group will gain experience with}
+\onslide<2->{
+\begin{table}
+\centering
+\begin{tabular}{c|c}
+Python                                              & \onslide<3->{\cmark}  \\
+\hline
+working as a group toward a common goal             & \onslide<4->{\cmark}  \\
+\hline
+handling and processing a large data set            & \onslide<5->{\cmark}  \\
+\hline
+graph algorithms                                    & \onslide<6->{\cmark
+                                                        $\times \frac12$}   \\
+\hline
+approximation algorithms for an NP-hard problem     & \onslide<7->{\xmark}
+\end{tabular}
+\caption{Benefits of our project}
+\label{tab:benefits}
+\end{table}
+}
+
+}
+
+\section{Summary}
+\frame{\frametitle{Summary}\tableofcontents}
+
+\frame{\frametitle{Sources}
+\begin{itemize}
+\item Gantt Charts created using software from the Gantt Project
+\begin{itemize}
+\item http://www.ganttproject.biz/ (accessed June 4, 2013)
+\end{itemize}
+\item Git repository hosted on GitHub
+\begin{itemize}
+\item https://github.com/
+\end{itemize}
+\end{itemize}
+}
+\end{document}
