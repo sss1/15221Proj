@@ -35,7 +35,7 @@ Jimmy Zong
 \newpage
 \pagenumbering{arabic} % include Arabic page-numbering starting here
 \section{Introduction}
-We first introduce the problem at hand and overview our solution and its
+We first introduce the Movie-Chain-Runner Problem, our solution, and our
 success.
 
 \subsection{The Movie-Chain-Runner Problem}
@@ -56,50 +56,52 @@ the longest chain consists of 4 titles:
 Live and Let Die Another Day of the Dead Poets' Society
 \end{center}
 
-By appropriately representing the movie list as a graph, one can show the
-Movie-Chain-Runner Problem to be equivalent to the Longest Path Problem
-(finding the longest simple path in a directed graph). \emph{Thus, our project
-is to study the movie title graph and innovate ways to find long paths in the
-graph.} The Longest Path Problem is well known to be NP-Complete, meaning that
-no efficient algorithm exists to find longest paths in large graphs, including
-our movie title graph. A review of the literature reveals that good approximate
-longest paths also cannot be found efficiently in large graphs.\hspace{-0.2cm}
+Our project is to approximately solve the Movie-Chain-Runner Problem for a
+given list of 6561 movie titles.
+By appropriately representing the movie list as a graph, we found that the
+Movie-Chain-Runner Problem is equivalent to the Longest Path Problem
+(finding the longest simple path in a directed graph). The Longest Path Problem
+is well known to be NP-Hard, meaning that no efficient algorithm exists to find
+longest paths in large graphs, including our movie graph. A review of the
+literature reveals that good approximate longest paths also cannot be found
+efficiently in large graphs.\hspace{-0.2cm}
 \footnote{
-A. Bj\"{o}rklund, T. Husfeldt, S. Khanna, ``Approximating longest directed
-paths and cycles,'' Proc. of the 31st ICALP, 2004. (accessed June 26, 2013 at
+Bj\"{o}rklund, Husfeldt, Khanna, ``Approximating longest directed
+paths and cycles,'' ICALP, 2004. (accessed June 26, 2013 a
 \texttt{
-http://citeseerx.ist.psu.edu/viewdoc/similar?doi=10.1.1.105.262\&type=ab}).}
-
+http://citeseerx.ist.psu.edu/viewdoc/similar?doi=10.1.1.105.262}).}
+Thus, our project is to study the movie title graph and innovate ways to find
+long paths in the graph.
 \subsection{Solution}
 We constructed our 301 title chain in four major steps. Our first step to was to
 reconstruct the list of movie titles as a directed graph, thus reducing the
 problem to the well-known Longest Path Problem. The second step was to
 implement a simple brute-force algorithm. The final two steps involved
 augmenting this brute-force algorithm with two new procedures: ``reversal'' and
-``insertion.'' The algorithms are described in detail under Section 2.3. on
+``replacement.'' The algorithms are described in detail under Section 2.3. on
 page 2.
 
 \subsection{Did We Succeed?}
 Our original goal was to surpass 300 titles. Despite some early setbacks
 leading us to lower our goal to 285 titles, we reached our original goal of 300
 titles with 301 titles (see Appendix B for the full movie chain). We did not
-achieve our secondary goal of 328 titles needed to set a new record.
+achieve the optional goal of 328 titles needed to set a new record.
 
 \section{Approach}
 
-\subsection{Objectives}
-We wanted our project's initial goal was to create a movie title chain of at
-least 300 titles. Due to some early setbacks, we lowered this goal to 285
-titles in our Progress Report, and kept 300 titles as an optional seconday
-goal.
-
+%\subsection{Objectives}
+%Our project's initial goal was to create a movie title chain of at
+%least 300 titles. Due to some early setbacks, we lowered this goal to 285
+%titles in our Progress Report, and kept 300 titles as an optional seconday
+%goal.
+%
 \subsection{Programming Languages}
 Our team considered programming our Python, C, or MATLAB. We
 settled on Python because our entire team was familiar with Python, whereas
 only three team members had used C, and only two had used MATLAB. Although C
 and MATLAB are faster languages, they are harder to use, and it would have
 taken too much time for team members to learn either. Jimmy also wrote Bash
-scripts to run our algorithms in parallel on cluster computers.
+scripts to run our algorithms in parallel on cluster machines.
 
 \subsection{Algorithms}
 We present several algorithms (both successful and unsuccessful) we
