@@ -70,14 +70,99 @@ graph and innovate ways to find long paths in the graph.
 
 \section{Approach}
 
+\subsection{Algorithms}
+\underline{Ideas that worked:}
+
+We tried an algorithm that computes acyclic subgraphs of our graph and then
+runs a polynomial time Longest Path algorithm known for acyclic graphs.
+However, the number of cycles proved too large to generate the subgraphs in a
+reasonable amount of time, and so we abandoned this effort.
+
+We also considered some more elaborate algorithms we found in the literature:
+a color-coding algorithm proposed by Alon et al.\hspace{-0.2cm}
+\footnote{Noga Alon , Raphael Yuster , Uri Zwick, Color-coding, Journal of the
+ACM (JACM), v.42 n.4, p.844-856, July 1995. (accessed June 16, 2013 at
+\texttt{http://dl.acm.org/citation.cfm?id=210337}).}
+and the genetic algorithms studied by Portugal et al.\hspace{-0.2cm}
+\footnote{
+D. Portugal, C. H. Antunes, R. Rocha, ``A Study of Genetic Algorithms for
+Approximating the Longest Path in Generic Graphs,'' Proc. of the IEEE SMC, pp.
+2539-2544, 2010. (accessed June 16, 2013 at
+\texttt{http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=5641920\&
+navigation=1}).}
+However, due to the complexity of implementing these algorithms and the success
+of our simpler algorithms, we opted not to try them.
+
 \section{Results}
 
 \section{Discussion}
+Our group consistently met about twice a week to plan and distribute our tasks
+After evaluating our team's work on the project, we will reflect on lessons
+learned and recommendations for future groups.
 \subsection{Evaluation}
+We used three methods to evaluate the success of our project.\\\\
+\underline{Method 1: Chain Length}
+
+Our project was a success in that the number of titles in our longest
+chain exceeded 300. Although we failed to establish a new record, this
+secondary goal was optional and not expected.\\\\
+\underline{Method 2: Algorithm Comparison}
+
+Our second method of evaluation was to compare different algorithms to
+decide on a ``best'' algorithm for the problem. Although we did not test a
+diverse selection of algorithms, we did attempt several variants on the basic
+brute force algorithm and document the longest chain each variant found. Table
+1 presents the results.
+\begin{table}
+\centering
+\begin{tabular}{l|c}
+Algorithm                               & Longest Chain \\
+\hline
+Brute-Force                             &               \\
+Brute-Force w/ reversal                 &               \\
+Brute-Force w/ reversal and insertion   &               \\
+DAG Poly-time                           &               \\
+\end{tabular}
+\caption{Longest chain found by each algorithm}
+\vspace{-8mm}
+\label{tab:algos}
+\end{table}
+\\\\
+\underline{Method 3: Time Prediction}
+
+In order to guage the difficulty of the problem at hand, we also attempted to
+predict the time needed to solve the problem by exploring all possible paths
+in the movie graph. To do this, we first measured the time taken to solve the
+problem on many random subgraphs of the movie graph and used this data to fit
+an exponential relation between the size of the graph and the time taken for
+the computation. We then extrapolated this relation to conclude that performing
+the computation on the entire graph would take about 1.03 trillion years,
+approximately 100 times the lifespan of the sun. Appendix B gives a detailed
+discussion of the experiment and its results and validity.
+
 \subsection{Lessons Learned}
+We learned several things about programming for large computational problems:
+\begin{itemize}
+\item Using primarily brute-force algorithms, we came quite close to (likely
+within 13\% of) the optimal solution. Thus, although far from optimal in
+theory, brute-force algorithms can produce decent solutions for some NP-hard
+problems in practice.
+\item For algorithms with large asymptotic runtimes, constant factors are
+important - a 50\% runtime reduction is very significant when the algorithm can
+take a week or more to run. This fact is really understated in CS classes.
+\item With a high level language (like Python) it is crucial to consider all
+available data structures and their implementations. We noticed too late that
+using a set rather than a list for part of our code might have sped up our
+program by a factor of 100.
+\end{itemize}
+
 \subsection{Recomendations}
+Our team's work ethic and organization were crucial to our success. We
+recommend having frequent meeting (at least twice weekly) in order to
+coordinate work and
 
 \section{Sources}
+{\Huge ADD UTILITY SOURCES, ABSTRACT, AND COMBINE! ALSO LPP HARDNESS SOURCE!}
 
 \section{Progress}
 We discuss our progress in three sections: General Progress, Status, and
@@ -85,11 +170,11 @@ Projections.
 
 \subsection{Status}
 Our current longest chain (included in Appendix A) consists of 278 titles,
-7 titles short of our June 17 goal of 285 titles. Since extending the movie chain has
-proven more difficult than we anticipated, we have decided to scale back our
-final goal from 300 titles to 285 titles. Since 285 titles is the necessary
-criterion for receiving an A on the project, the benefits of 300 titles are
-primarily cosmetic, and so we consider this change acceptable.
+7 titles short of our June 17 goal of 285 titles. Since extending the movie
+chain has proven more difficult than we anticipated, we have decided to scale
+back our final goal from 300 titles to 285 titles. Since 285 titles is the
+necessary criterion for receiving an A on the project, the benefits of 300
+titles are primarily cosmetic, and so we consider this change acceptable.
 
 Figure \ref{fig:gantto} below shows the original Gantt chart presented in
 our project proposal. Figure \ref{fig:ganttn} below shows our revised Gantt
@@ -113,21 +198,6 @@ June 17 has been extended to June 25.
 \label{fig:ganttn}
 \includegraphics[width=0.2\textwidth]{key}
 \end{figure}
-
-If simple methods prove insufficient, we may also implement a color-coding
-algorithm proposed by Alon et al.\hspace{-0.2cm}
-\footnote{Noga Alon , Raphael Yuster , Uri Zwick, Color-coding, Journal of the
-ACM (JACM), v.42 n.4, p.844-856, July 1995. (accessed June 16, 2013 at
-\texttt{http://dl.acm.org/citation.cfm?id=210337}).}
-or the genetic algorithms studied by Portugal et al.,\hspace{-0.2cm}
-\footnote{
-D. Portugal, C. H. Antunes, R. Rocha, ``A Study of Genetic Algorithms for
-Approximating the Longest Path in Generic Graphs,'' Proc. of the IEEE SMC, pp.
-2539-2544, 2010. (accessed June 16, 2013 at
-\texttt{http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=5641920\&
-navigation=1}).}
-although, due to the implementation complexity of these algorithms, we hope
-this will be unnecessary.
 
 \begin{appendices}
 \section{Our Longest Movie Chain}
