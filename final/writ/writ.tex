@@ -56,34 +56,33 @@ the longest chain consists of 4 titles:
 Live and Let Die Another Day of the Dead Poets' Society
 \end{center}
 
-By appropriately representing the movie list as a graph, the Movie-Chain-Runner
-Problem can be shown to be equivalent to the Longest Path Problem (finding the
-longest simple path in a directed graph). The Longest Path Problem is well
-known to be NP-Complete, meaning that no efficient algorithm exists to find
-longest paths in large graphs, including our movie title graph. A review of the
-literature reveals that good approximate longest paths also cannot be found
-efficiently in large graphs.\hspace{-0.2cm}
+By appropriately representing the movie list as a graph, one can show the
+Movie-Chain-Runner Problem to be equivalent to the Longest Path Problem
+(finding the longest simple path in a directed graph). \emph{Thus, our project
+is to study the movie title graph and innovate ways to find long paths in the
+graph.} The Longest Path Problem is well known to be NP-Complete, meaning that
+no efficient algorithm exists to find longest paths in large graphs, including
+our movie title graph. A review of the literature reveals that good approximate
+longest paths also cannot be found efficiently in large graphs.\hspace{-0.2cm}
 \footnote{
 A. Bj\"{o}rklund, T. Husfeldt, S. Khanna, ``Approximating longest directed
 paths and cycles,'' Proc. of the 31st ICALP, 2004. (accessed June 26, 2013 at
 \texttt{
 http://citeseerx.ist.psu.edu/viewdoc/similar?doi=10.1.1.105.262\&type=ab}).}
-Thus, our project is to study the movie title
-graph and innovate ways to find long paths in the graph.
 
 \subsection{Solution}
 We constructed our 301 title chain in four major steps. Our first step to was to
-reconstruct the list of movie titles as a directed graph, reducing the problem
-to the well-known Longest Path Problem. The second step was to implement a
-simple brute-force algorithm. The final two steps involved augmenting this
-brute-force algorithm with two new procedures: ``reversal'' and ``insertion.''
-The algorithms are described in detail on page 2, under the Algorithms
-subsection of our Approach section.
+reconstruct the list of movie titles as a directed graph, thus reducing the
+problem to the well-known Longest Path Problem. The second step was to
+implement a simple brute-force algorithm. The final two steps involved
+augmenting this brute-force algorithm with two new procedures: ``reversal'' and
+``insertion.'' The algorithms are described in detail under Section 2.3. on
+page 2.
 
 \subsection{Did We Succeed?}
-Our original goal was to surpass 300 titles. Despite some setbacks leading us
-to lower our goal to 285 titles, we reached our original goal of 300 titles
-with 301 titles (see Appendix B for the full movie chain). We did not
+Our original goal was to surpass 300 titles. Despite some early setbacks
+leading us to lower our goal to 285 titles, we reached our original goal of 300
+titles with 301 titles (see Appendix B for the full movie chain). We did not
 achieve our secondary goal of 328 titles needed to set a new record.
 
 \section{Approach}
@@ -194,11 +193,10 @@ secondary goal was optional and not expected.\\\\
 Our second method of evaluation was to compare different algorithms to
 decide on a ``best'' algorithm for the problem. Although we did not test a
 diverse selection of algorithms, we did try several variants on the basic
-brute force algorithm (as explained on page 2, under the the Algorithms
-subsection of our Approach section. Table \ref{tab:algos} above presents the
-longest chain found by each variant. It is clear from the results that both
-reversal and replacement are important augmentations of the
-basic brute-force algorithm.
+brute force algorithm (as explained on page 2, under Section 2.3. Table
+\ref{tab:algos} above presents the longest chain found by each variant. It is
+clear from the results that both reversal and replacement are important
+augmentations of the basic brute-force algorithm.
 \begin{table}
 \centering
 \begin{tabular}{l|c}
@@ -275,12 +273,51 @@ coordinate work and ensure team members remain enganged.
 \end{itemize}
 \end{itemize}
 
+\newpage
 \begin{appendices}
 
 \section{Time Prediction}
+To guage the difficulty of the problem at hand, we predicted the time needed to
+solve the problem by exploring all possible paths in the movie graph. For each
+$k \in \{100,200,300,\dots,2500\}$, we first generated 100 random subgraphs,
+each induced by $k$ titles chosen uniformly at random. We then measured the
+runtime on each subgraph, and averaged over samples to estimate the runtime for
+$k$ titles. We fitted an exponential relation between the size of the graph and
+the runtime (the parameters of the exponential are included in table
+\ref{fig:exp_par}). Evaluating this exponential function at $x = 6561$ gives an
+estimate of {\bf 1.03 trillion years} needed to compute the solution for the
+entire 6561 title movie graph.
 
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.4\textwidth]{Benchmark2}
+\end{center}
+\vspace{-5mm}
+\caption{Exponential function from graph size to runtime}
+\label{fig:exp_par}
+\vspace{-2mm}
+\end{figure}
+
+Figure \ref{fig:bm1} shows the fitted plot of how the runtime scales with the
+size of movie graph.
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{Benchmark1}
+\end{center}
+\vspace{-7mm}
+\caption{Plot of runtime (in seconds) over graph size (in titles).}
+\label{fig:bm1}
+\vspace{-2mm}
+\end{figure}
+
+The high $R^2$ value suggests that our data fit the exponential relation quite
+well. Since we measured runtime rather than operations performed, the results
+depend on our programming language and computer. The tests were run
+sequentially in Python on a single GHC cluster machine. However, a powerful
+computer running C would reduce the runtime by at most a factor of 10,000, and
+so the computation would still take millions of years.
 \section{Our Longest Movie Chain}
-Here, we include our current longest movie chain, with 278 titles and 885
+Here, we include our current longest movie chain, with 301 titles and 961
 words:
 {\footnotesize
 \begin{multicols}{2}
