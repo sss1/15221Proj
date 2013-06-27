@@ -279,12 +279,12 @@ coordinate work and ensure team members remain enganged.
 
 \section{Time Prediction}
 To guage the difficulty of the problem at hand, we predicted the time needed to
-solve the problem by exploring all possible paths in the movie graph. For each
-$k \in \{100,200,300,\dots,2500\}$, we first generated 100 random subgraphs,
+solve the problem by exploring all possible paths in the movie graph. For
+$k \in \{100,200,\dots,2500\}$, we first generated 100 random subgraphs,
 each induced by $k$ titles chosen uniformly at random. We then measured the
 runtime on each subgraph, and averaged over samples to estimate the runtime for
 $k$ titles. We fitted an exponential relation between the size of the graph and
-the runtime (the parameters of the exponential are included in table
+the runtime (the parameters of the exponential are included in Figure
 \ref{fig:exp_par}). Evaluating this exponential function at $x = 6561$ gives an
 estimate of {\bf 1.03 trillion years} needed to compute the solution for the
 entire 6561 title movie graph.
